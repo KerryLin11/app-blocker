@@ -1,12 +1,22 @@
+"""
+Program Blocker for Windows
+---------------------------
+
+The program will run in the background and automatically terminate any blocked applications that attempt to launch during the specified time period.
+
+"""
+
 import psutil
 import time
 import threading
 from datetime import datetime, timedelta
 import tkinter as tk
 from tkinter import messagebox
-from tkinter import ttk # Import ttk for themed widgets
+from tkinter import ttk
 import ctypes
 import os
+
+
 
 SAVE_FILE = "default_blocked_apps.txt"
 
@@ -119,7 +129,7 @@ def on_start_button_click(duration_entry, root):
 def create_gui():
     root = tk.Tk()
     root.title("App Blocker")
-    root.geometry("400x550") # Set a fixed window size
+    root.geometry("400x550") # Fixed window size
     root.resizable(False, False) # Make window non-resizable
 
     # Apply a theme
